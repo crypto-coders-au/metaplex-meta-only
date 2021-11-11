@@ -80,8 +80,9 @@ export async function uploadMeta(
   for (let i = 0; i < SIZE; i++) {
     // const image = images[i];
     const metadata = metadatas[i];
+    const metadataName = path.basename(metadata);
     // const imageName = path.basename(image);
-    const index = metadata.replace(EXTENSION_JSON, '');
+    const index = metadataName.replace(EXTENSION_JSON, '');
 
     if (i % 50 === 0) {
       log.info(`Processing file: ${i}`);
